@@ -476,6 +476,10 @@ function tone(f,d=.08,type='square',g=.1,when=0,dest=sfxGain){
  o.connect(v);v.connect(dest);o.start(audio.currentTime+when);o.stop(audio.currentTime+when+d);
 }
 function hiss(d=.05,g=.05){if(!audio)return;const n=Math.floor(audio.sampleRate*d),b=audio.createBuffer(1,n,audio.sampleRate),a=b.getChannelData(0);for(let i=0;i<n;i++)a[i]=(Math.random()*2-1)*(1-i/n);const s=audio.createBufferSource(),v=audio.createGain();s.buffer=b;v.gain.value=g;s.connect(v);v.connect(sfxGain);s.start()}
+function stopMusic(){
+ if(trackSource){try{trackSource.stop()}catch(e){} try{trackSource.disconnect()}catch(e){} trackSource=null;}
+ if(beatTimer){clearInterval(beatTimer);beatTimer=null;}
+}
 function startFallback(){
  initAudio();stopMusic();
  const BPM=103.36,eighth=(60/BPM)/2;let step=0;
