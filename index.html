@@ -90,6 +90,286 @@ html,body{width:100%;height:100%;overflow:hidden}
   #fire{width:76px;height:86px;font-size:14px}
 }
 
+
+/* iPhone Safari landscape ultra-fit v2 */
+@media (orientation:landscape) and (max-height:460px){
+  #overlay{
+    padding:3px;
+    align-items:center;
+    justify-content:center;
+  }
+  .poster{
+    width:min(1120px,98vw);
+    height:calc(100dvh - 6px);
+    max-height:none;
+    padding:6px 9px;
+    border-width:3px;
+    box-shadow:0 0 0 2px var(--r),5px 5px 0 #0008;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:minmax(280px,32%) 1fr;
+    grid-template-rows:auto auto 1fr auto;
+    column-gap:12px;
+    align-content:stretch;
+  }
+  .kicker{
+    grid-column:1;
+    grid-row:1;
+    width:max-content;
+    font-size:8px;
+    padding:2px 5px;
+    letter-spacing:1.2px;
+    margin:0 0 2px;
+  }
+  .title{
+    grid-column:1;
+    grid-row:2;
+    font-size:clamp(28px,10.2vh,48px);
+    line-height:.72;
+    margin:2px 0 2px;
+    letter-spacing:-1px;
+  }
+  .stamp{
+    grid-column:1;
+    grid-row:3;
+    align-self:start;
+    width:max-content;
+    border-width:2px;
+    font-size:clamp(15px,5.2vh,22px);
+    padding:0 5px;
+    margin-top:2px;
+    transform:rotate(-4deg);
+  }
+  .slogan{
+    grid-column:2;
+    grid-row:1;
+    align-self:end;
+    font-size:clamp(12px,3.2vh,16px);
+    line-height:1.02;
+    margin:0;
+  }
+  .desc{
+    grid-column:2;
+    grid-row:2 / span 2;
+    align-self:start;
+    font-size:8px;
+    line-height:1.15;
+    margin:3px 0 0;
+    max-height:20vh;
+    overflow:hidden;
+  }
+  .row{
+    grid-column:1 / span 2;
+    grid-row:4;
+    gap:5px;
+    margin-top:3px;
+    flex-wrap:nowrap;
+    align-items:center;
+  }
+  .action{
+    padding:5px 9px;
+    font-size:11px;
+    border-width:2px;
+    line-height:1;
+  }
+  .filebtn{
+    padding:5px 8px;
+    font-size:9px;
+    line-height:1;
+  }
+  #trackStatus{
+    font-size:7px;
+    line-height:1.05;
+    margin-top:2px;
+  }
+
+  #hud{font-size:9px}
+  #stageName{font-size:9px}
+  .hudrow{top:max(4px,env(safe-area-inset-top));left:max(5px,env(safe-area-inset-left));right:max(5px,env(safe-area-inset-right))}
+  .controls{bottom:max(3px,env(safe-area-inset-bottom));padding:0 5px}
+  .pad{grid-template-columns:42px 42px;grid-template-rows:34px 34px;gap:4px}
+  .move{font-size:15px}
+  #jump{font-size:11px}
+  #fire{width:64px;height:70px;font-size:12px}
+}
+
+/* Avoid the title panel being hidden behind Safari bars on very short landscape viewports */
+@media (orientation:landscape) and (max-height:390px){
+  .poster{
+    transform:scale(.93);
+    transform-origin:center center;
+    width:104vw;
+    height:107dvh;
+  }
+}
+
+
+/* iPhone Safari landscape final fit v3 */
+@media (orientation:landscape){
+  #overlay{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2px;
+    overflow:hidden;
+  }
+  .poster{
+    width:96vw !important;
+    height:calc(100dvh - 6px) !important;
+    max-height:calc(100dvh - 6px) !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    padding:6px 8px !important;
+    border-width:3px !important;
+    box-shadow:0 0 0 2px var(--r),4px 4px 0 #0008 !important;
+    display:grid !important;
+    grid-template-columns:30% 1fr !important;
+    grid-template-rows:auto auto auto 1fr auto !important;
+    column-gap:10px !important;
+    row-gap:2px !important;
+    align-content:stretch !important;
+  }
+
+  .kicker{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    margin:0 !important;
+    font-size:8px !important;
+    padding:2px 5px !important;
+    line-height:1 !important;
+    width:max-content !important;
+  }
+
+  .title{
+    grid-column:1 !important;
+    grid-row:2 / span 2 !important;
+    margin:2px 0 0 !important;
+    font-size:clamp(26px,9.5vh,44px) !important;
+    line-height:.72 !important;
+    letter-spacing:-1px !important;
+    align-self:start !important;
+  }
+
+  .stamp{
+    grid-column:1 !important;
+    grid-row:4 !important;
+    align-self:start !important;
+    margin:2px 0 0 !important;
+    font-size:clamp(14px,4.7vh,21px) !important;
+    line-height:1 !important;
+    border-width:2px !important;
+    padding:1px 5px !important;
+    width:max-content !important;
+  }
+
+  .slogan{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    align-self:end !important;
+    margin:0 !important;
+    font-size:clamp(12px,3.3vh,16px) !important;
+    line-height:1.02 !important;
+  }
+
+  .desc{
+    grid-column:2 !important;
+    grid-row:2 / span 3 !important;
+    align-self:start !important;
+    margin:2px 0 0 !important;
+    font-size:8px !important;
+    line-height:1.1 !important;
+    max-height:17vh !important;
+    overflow:hidden !important;
+  }
+
+  .row{
+    grid-column:1 / span 2 !important;
+    grid-row:5 !important;
+    align-self:end !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    gap:4px !important;
+    margin:2px 0 0 !important;
+    min-height:30px !important;
+    overflow:visible !important;
+  }
+
+  .action{
+    padding:5px 9px !important;
+    font-size:11px !important;
+    line-height:1 !important;
+    border-width:2px !important;
+    min-height:28px !important;
+  }
+
+  .filebtn{
+    padding:5px 8px !important;
+    font-size:9px !important;
+    line-height:1 !important;
+    min-height:28px !important;
+  }
+
+  #trackStatus{
+    position:absolute !important;
+    left:10px !important;
+    bottom:2px !important;
+    font-size:6px !important;
+    line-height:1 !important;
+    margin:0 !important;
+    opacity:.85 !important;
+    pointer-events:none !important;
+  }
+
+  /* gameplay HUD / controls */
+  #hud{font-size:9px !important}
+  #stageName{font-size:9px !important}
+  .hudrow{
+    top:max(3px,env(safe-area-inset-top)) !important;
+    left:max(4px,env(safe-area-inset-left)) !important;
+    right:max(4px,env(safe-area-inset-right)) !important;
+  }
+  .controls{
+    bottom:max(2px,env(safe-area-inset-bottom)) !important;
+    padding:0 4px !important;
+  }
+  .pad{
+    grid-template-columns:38px 38px !important;
+    grid-template-rows:31px 31px !important;
+    gap:3px !important;
+  }
+  .move{font-size:14px !important}
+  #jump{font-size:10px !important}
+  #fire{
+    width:58px !important;
+    height:62px !important;
+    font-size:11px !important;
+  }
+}
+
+/* very short Safari landscape viewports */
+@media (orientation:landscape) and (max-height:380px){
+  .poster{
+    width:98vw !important;
+    height:calc(100dvh - 2px) !important;
+    max-height:calc(100dvh - 2px) !important;
+    padding:4px 6px !important;
+  }
+  .title{
+    font-size:clamp(23px,8.8vh,38px) !important;
+  }
+  .stamp{
+    font-size:clamp(12px,4.1vh,18px) !important;
+  }
+  .desc{
+    max-height:14vh !important;
+    font-size:7px !important;
+  }
+  .action,.filebtn{
+    min-height:24px !important;
+    padding:4px 7px !important;
+  }
+}
+
 </style>
 
 <script>
